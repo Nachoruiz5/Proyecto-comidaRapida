@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;900&display=swap');
+
+/* Global Styles */
+body {
+    background: url(../img/hambur.jpg) fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+/* Title Section */
+.titulo {
+    margin: 80px auto 20px;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    background-color: #d32f2f; /* Rojo cálido */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.7);
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+/* Table Styles */
+.table {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    width: 90%;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    color: #333;
+}
+
+.table th {
+    background-color: #c62828; /* Rojo oscuro */
+    color: white;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(211, 47, 47, 0.1);
+}
+
+.table-group-divider {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+footer .col {
+    flex: 1 1 30%;
+}
+
+footer .logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+footer p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+footer ul.icon {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer ul.icon li a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer ul.icon li a:hover {
+    color: #28a745;
+}
+
+footer h3.titulo1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+footer ul#contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul#contacto li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Buttons */
+.btn-danger,
+.btn-success {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .titulo {
+        width: 90%;
+        margin: 80px auto;
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .col {
+        flex: 1 1 100%;
+    }
+}

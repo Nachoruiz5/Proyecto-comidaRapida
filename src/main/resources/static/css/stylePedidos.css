@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+
+body {
+    background: url(../img/fondo_admin.jpg) fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Título principal */
+.titulo {
+    color: #fff;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #e53935, #d32f2f);
+    padding: 15px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtítulos */
+#cantidadPedidos, #ganancia {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: rgba(211, 47, 47, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Tabla */
+.table {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.table th {
+    background: linear-gradient(135deg, #d32f2f, #c62828);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+    color: #555;
+}
+
+.table-group-divider {
+    border-color: rgba(211, 47, 47, 0.5);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(229, 57, 53, 0.1);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(211, 47, 47, 0.1);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+}

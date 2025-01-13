@@ -1,0 +1,100 @@
+/* Fuentes y Estilos Generales */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap');
+
+body {
+  font-family: 'Kanit', sans-serif;
+  background: url(../img/hambur.jpg) fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h5 {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+section {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  width: 90%;
+}
+
+/* Cards */
+.card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  height: 100%;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #d1d1d1;
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Botones y Precios */
+a.btn {
+  margin-top: 10px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+a.btn:hover {
+  background-color: #218838;
+}

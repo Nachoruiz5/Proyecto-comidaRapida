@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap');
+
+body {
+	background: url(../img/tinywow_fondococina_39923945.png) fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: 'Kanit', sans-serif;
+	margin: 0;
+	padding: 0;
+
+}
+
+.titulo {
+	color: rgb(0, 0, 0);
+	padding: 5px;
+	font-weight: bold;
+	font-family: 'Kanit', sans-serif;
+}
+
+.formularioregister {
+	width: 400px;
+	background-color: white;
+	padding: 30px;
+	margin-left: 35%;
+	margin-top: 90px;
+	margin-bottom: 20px;
+	border-radius: 15px;
+	font-family: "calibri";
+	box-shadow: 7px 13px 37px rgb(0, 0, 0);
+}
+
+.formularioregister h2 {
+
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.form-group {
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+	margin-left: 10px;
+
+}
+
+#boton-envio {
+
+	width: 100px;
+	background-color: rgb(0, 0, 0);
+	border-radius: 5px;
+	border: none;
+	padding: 15px;
+	margin: 20px 0;
+	color: white;
+	cursor: pointer;
+	margin-left: 110px;
+
+}
+
+
+.form-control {
+	border-radius: 10px;
+	outline: none !important;
+	text-indent: 10px;
+	transition: .3s ease all;
+	width: 300px;
+}
+
+#boton-envio:hover {
+	transform: scale(1.02);
+	transition: transform 0.30s;
+}
+
+.navbar-brand {
+	font-weight: 700;
+}
+
+.Uparrafo a {
+	margin-left: 40px;
+	color: rgb(0, 0, 102);
+}
+.Uparrafo a:hover {
+	color: rgb(26, 26, 255);
+}

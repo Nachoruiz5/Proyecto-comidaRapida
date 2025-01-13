@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Iniciar Sesión</title>
+	<link th:href="@{/css/login.css}" rel="stylesheet"/>
+	<link th:href="@{/css/footer.css}" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- Navigation -->
+	<div th:include="usuarioVista/template_usuario.html::header"></div>
+	
+	<div class="container">
+		<form th:action="@{/usuario/login}" method="post" class="formularioLogin">
+			<h2 class="titulo">Iniciar Sesión</h2>
+			<div class="form-group">
+				<label for="email">Email:</label> <input type="email"
+					class="form-control" id="username" name="username" required
+					placeholder="Ingrese su email" autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Contraseña:</label> <input type="password"
+					class="form-control" id="password" name="password" required
+					placeholder="Ingrese su contraseña" autocomplete="off">
+			</div>
+			<div class="col-sm-2">
+				<button type="submit" class="btn btn-success" id="boton-envio">Iniciar Sesión</button>
+			</div>
+			<p class="Uparrafo"><a th:href="@{/usuario/registro}" class="card-link">¿No tienes una cuenta? ¡Regístrate!</a></p>
+		</form>
+	</div>
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+		  <div class="col">
+			<p>
+			  "Nacho's" es tu destino culinario ideal. Deliciosas comidas con
+			  ingredientes frescos en un ambiente acogedor. ¡Sabor que deleita,
+			  experiencia que cautiva!
+			</p>
+			<ul class="icon">
+			  <li><a href="#" class="fa-brands fa-facebook-f"></a></li>
+			  <li><a href="#" class="fa-brands fa-twitter"></a></li>
+			  <li><a href="#" class="fa-brands fa-instagram"></a></li>
+			  <li><a href="#" class="fa-brands fa-linkedin-in"></a></li>
+			</ul>
+		  </div>
+		  <div class="col-6 contacto">
+			<h3 class="titulo1">Contacto</h3>
+			<ul id="contacto">
+			  <li>Teléfono: +54 26134251</li>
+			  <li>Email: nachoscomida@gmail.com</li>
+			  <li>Dirección: Av. San Martín 1945, Ciudad, Mendoza</li>
+			</ul>
+		  </div>
+		  <div class="col logo">
+			<img class="imagencubo" th:src="@{/img/LOGOEMPRESA.png}" alt="Logo Nacho's">
+		  </div>
+		</div>
+		<!-- Copyright -->
+		<div>
+		  <small>Copyright &copy; 2024 Nacho's</small>
+		</div>
+	  </footer>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

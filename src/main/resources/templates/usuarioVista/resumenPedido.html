@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>Resumen de Pedido</title>
+		<link th:href="@{/css/styleResumenPedido.css}" rel="stylesheet"/>
+		<link th:href="@{/css/footer.css}" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	</head>
+	<body th:onload="agregarEnvio([[${pedido.total}]])">
+		<!-- Navigation -->
+	
+		<div th:if="${sesion != null}" th:replace="usuarioVista/template_usuario.html :: header-user"></div>
+		
+		<div class="container">
+			<br>
+			<br>
+			<br>
+			<h1 class="titulo">Resumen del Pedido</h1>
+			<div id="datos-cliente">
+				<h4 th:text=" 'Cliente: ' + ${usuario.nombre}"></h4>
+				<h4 th:text=" 'Correo: ' + ${usuario.email}"></h4>
+				<h4 th:text=" 'Dirección: ' + ${usuario.direccion}"></h4>
+			</div>
+			<br>
+			<h1 class="titulo-productos">Productos</h1>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">Nombre</th>
+						<th scope="col">Precio</th>
+						<th scope="col">Cantidad</th>
+						<th scope="col">Total</th>
+					</tr>
+				</thead>
+				<tbody class="table-group-divider">
+					<tr th:each="dtpedido:${carrito}">
+						<td th:text="${dtpedido.nombre}"></td>
+						<td th:text="${dtpedido.precio}"></td>
+						<td th:text="${dtpedido.cantidad}"></td>
+						<td th:text="${dtpedido.total}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="datosFinales">
+				<h2 id="subtotal" th:text="'Subtotal: $ '+ ${pedido.total}"></h2>
+			
+				<h5 class="selectores">Servicio:</h5>
+				<select name="servicio" id="servicio" th:onchange="agregarEnvio([[${pedido.total}]])">
+					<option value="retiro">Retiro en el local</option>
+					<option value="envio">Envío a domicilio</option>
+				</select>
+				<br>
+				<span id="costoEnvio"></span>
+				<br>
+			
+				<h5 class="selectores">Medio de pago:</h5>
+				<p>10% descuento en efectivo</p>
+				<select name="metodoPago" id="metodoPago">
+					<option value="efectivo">Efectivo</option>
+					<option value="tarjeta">Tarjeta</option>
+				</select>
+				<br>
+				<br>
+				<form th:action="@{/guardarPedido}" method="get">
+					<div class="form-group" id="contenedor-total">
+						<label id="label-total" for="total">Total: $</label><input type="number" class="form-control" id="total" th:name="total"
+							readonly>
+					</div>
+					<button type="submit" class="btn btn-success">Confirmar</button>
+				</form>
+		</div>
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+			  <div class="col">
+				<p>
+				  "Nacho's" es tu destino culinario ideal. Deliciosas comidas con
+				  ingredientes frescos en un ambiente acogedor. ¡Sabor que deleita,
+				  experiencia que cautiva!
+				</p>
+				<ul class="icon">
+				  <li><a href="#" class="fa-brands fa-facebook-f"></a></li>
+				  <li><a href="#" class="fa-brands fa-twitter"></a></li>
+				  <li><a href="#" class="fa-brands fa-instagram"></a></li>
+				  <li><a href="#" class="fa-brands fa-linkedin-in"></a></li>
+				</ul>
+			  </div>
+			  <div class="col-6 contacto">
+				<h3 class="titulo1">Contacto</h3>
+				<ul id="contacto">
+				  <li>Teléfono: +54 26134251</li>
+				  <li>Email: nachoscomida@gmail.com</li>
+				  <li>Dirección: Av. San Martín 1945, Ciudad, Mendoza</li>
+				</ul>
+			  </div>
+			  <div class="col logo">
+				<img class="imagencubo" th:src="@{/img/LOGOEMPRESA.png}" alt="Logo Nacho's">
+			  </div>
+			</div>
+			<!-- Copyright -->
+			<div>
+			  <small>Copyright &copy; 2024 Nacho's</small>
+			</div>
+		  </footer>	
+		<script type="text/javascript" th:src="@{/js/agregarEnvio.js}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	</body>
+</html>

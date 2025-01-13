@@ -1,0 +1,71 @@
+body {
+    background: url(../img/fondo_admin.jpg) fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+}
+
+/* Título */
+.titulo {
+    margin-top: 100px;
+    font-weight: 600;
+    color: #fff; /* Blanco para el texto */
+    text-align: center;
+    background-color: #d32f2f; /* Rojo cálido */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+/* Producto */
+.producto {
+    margin-top: 10px;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo suave */
+    border: 1px solid #e0e0e0;
+}
+
+/* Mejora en las cajas de productos */
+.producto:hover {
+    background-color: rgba(255, 255, 255, 1); /* Aumenta la opacidad al pasar el cursor */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px); /* Efecto sutil de elevación */
+    transition: all 0.3s ease;
+}
+
+/* Enlaces y botones dentro de los productos */
+.producto a {
+    color: #fff;
+    background-color: #d32f2f; /* Rojo */
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.producto a:hover {
+    background-color: #c62828; /* Rojo más oscuro */
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .producto {
+        padding: 1.5em;
+        font-size: 0.9rem;
+    }
+}

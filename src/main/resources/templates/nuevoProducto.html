@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>[[${producto.idProducto ne null ? 'Editar Producto' : 'Nuevo Producto'}]]</title>
+		<link th:href="@{/css/styleNuevoProducto.css}" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	</head>
+	<body>
+		<div th:include="template_administrador.html::header"></div>
+		
+		<div class="row justify-content-center">
+			<div class="col-md6 col-lg-4">
+				
+				<h3 class="titulo">[[${producto.idProducto ne null ? 'Editar Producto' : 'Nuevo Producto'}]]</h3>
+				<br>
+				<form class="producto" action="" method="post" enctype="multipart/form-data" th:object="${producto}">
+					<div class="mb-3">
+						<label for="nombre">Nombre: </label>
+						<input id="nombre" type="text" autocomplete="off" placeholder="Nombre" th:field="*{nombre}" class="form-control" th:errorClass="is-invalid">
+						<div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="precio">Precio: </label>
+						<input id="precio" type="number" step="any" autocomplete="off" placeholder="Precio" th:field="*{precio}" min="1" class="form-control" th:errorClass="is-invalid">
+						<div th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}" class="invalid-feedback"></div>
+					</div>
+
+					<div class="mb-3">
+						<label for="imagen">Imagen: </label>
+						<input name="file" type="file" id="imagen"  class="form-control form-control-sm col-md-6">
+						<div></div>
+					</div>
+					<div class="text-end">
+						<button class="btn btn-success">Guardar</button>
+						<a href="/productos" class="btn btn-light ms-2">Cancelar</a>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	</body>
+</html>

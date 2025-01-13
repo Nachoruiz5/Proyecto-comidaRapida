@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;900&display=swap');
+
+/* Global Styles */
+body {
+    background: url(../img/hambur.jpg) fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    color: #fff;
+}
+
+/* Title Section */
+.titulo {
+    color: rgb(22, 22, 22);
+    padding: 10px;
+    font-weight: bold;
+    margin: 100px auto 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+/* Table Styles */
+.table {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Subtotal Section */
+.subtotal {
+    font-weight: 600;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.7);
+    margin: auto;
+    margin-bottom: 20px;
+    color: rgb(22, 22, 22);
+}
+
+.subtotal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.subtotal h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.subtotal .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  background-color: #f49c23; /* Naranja */
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Kanit', sans-serif;
+
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+
+}
+
+.col {
+  flex-basis: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7;
+  text-align: center;
+
+}
+
+
+.contacto ul {
+  list-style: none
+
+}
+
+.contacto ul li {
+  margin-bottom: 10px;
+
+  
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+
+
+}
+
+.icon a {
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 10px;
+  transition: transform 0.3s ease;
+
+
+}
+
+.icon a:hover {
+  transform: scale(1.1);
+  background-color: #6a696b;
+  color: white
+
+
+}
+
+.logo img {
+  max-width: 150px; /* Ajusta el tamaño del logo */
+  height: 150px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0);
+  background-color: black;
+
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0);
+}
+
+/* Responsive */
+@media only screen and (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
+}

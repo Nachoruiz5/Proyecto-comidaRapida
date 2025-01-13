@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>Pedidos</title>
+		<link th:href="@{/css/stylePedidos.css}" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	</head>
+	<body>
+		
+		<!-- Navigation -->
+		<div th:include="template_administrador.html::header"></div>
+		
+		<div class="container">
+			<br>
+			<br>
+			<h1 class="titulo">Pedidos</h1>
+			<h4 class="titulo" id="cantidadPedidos"></h4>
+			<h4 class="titulo" id="ganancia"></h4>
+			<table class="table table-hover" id="tablaPedidos">
+				<thead>
+					<tr>
+						<th scope="col">N°</th>
+						<th scope="col">Fecha</th>
+						<th scope="col">Total</th>
+						<th scope="col">Acción</th>
+					</tr>
+				</thead>
+				<tbody class="table-group-divider">
+					<tr th:each="pedido:${pedidos}">
+						<td th:text="${pedido.idPedido}"></td>
+						<td th:text="${pedido.fecha}"></td>
+						<td th:text="${pedido.total}"></td>
+						<td><a th:href="@{/administrador/detalle/{id} (id=${pedido.idPedido}) }" class="btn btn-success">Ver detalles</a></td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+		<script type="text/javascript" th:src="@{/js/contarPedidos.js}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	</body>
+</html>
